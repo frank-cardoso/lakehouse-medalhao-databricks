@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.python-version
+
+# Virtual environments
+venv/
+.env/
+.env
+env/
+ENV/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Pytest cache
+.pytest_cache/
+
+# VS Code
+.vscode/
+
+# macOS
+.DS_Store
+
+# Build / distribution
+build/
+dist/
+*.egg-info/
+
+# MkDocs / site output
+site/
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.swp
+*~

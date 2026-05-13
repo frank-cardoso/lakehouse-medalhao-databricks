@@ -1,0 +1,70 @@
+site_name: Lakehouse Medalhão Databricks
+site_description: Arquitetura Lakehouse com Databricks, Spark e Delta Lake
+site_author: Frank Cardoso Serrano, Gustavo Nunes Teixeira
+
+repo_url: https://github.com/frank-cardoso/lakehouse-medalhao-databricks
+repo_name: lakehouse-medalhao-databricks
+
+theme:
+  name: material
+
+  language: pt-BR
+
+  palette:
+    - scheme: slate
+      primary: deep purple
+      accent: cyan
+      toggle:
+        icon: material/weather-night
+        name: Dark mode
+
+    - scheme: default
+      primary: deep purple
+      accent: cyan
+      toggle:
+        icon: material/weather-sunny
+        name: Light mode
+
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.highlight
+    - search.share
+    - content.code.copy
+    - content.tabs.link
+
+markdown_extensions:
+  - admonition
+  - tables
+  - attr_list
+  - md_in_html
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.tabbed:
+      alternate_style: true
+
+plugins:
+  - search
+
+extra_css:
+  - stylesheets/extra.css
+
+nav:
+  - Home: index.md
+
+  - Arquitetura:
+      - Visão Geral: arquitetura.md
+      - Bronze Layer: bronze.md
+      - Silver Layer: silver.md
+      - Gold Layer: gold.md
+
+  - Pipeline:
+      - Fluxo ETL: pipeline.md
+
+  - Tecnologias:
+      - Databricks: databricks.md
+      - Delta Lake: delta-lake.md

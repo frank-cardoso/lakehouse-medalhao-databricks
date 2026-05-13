@@ -1,0 +1,16 @@
+.md-header {
+    background-color: #111827;
+}
+
+.md-typeset h1 {
+    font-weight: 800;
+}
+
+.md-typeset h2 {
+    border-bottom: 1px solid #333;
+    padding-bottom: 5px;
+}
+
+.md-content__button {
+    display: none;
+}
