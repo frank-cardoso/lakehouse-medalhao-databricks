@@ -1,4 +1,4 @@
-# 🚀 Lakehouse Medallion (Databricks)
+# 🚀 Lakehouse Medallion para Seguradora (Databricks)
 
 Projeto completo de **Data Lakehouse** para aula de engenharia de dados, construído no **Databricks** com a **Arquitetura Medallion**. O fluxo cobre desde a extração de dados no MongoDB Atlas até a modelagem dimensional no Gold, garantindo governança, qualidade e performance em cada camada.
 
@@ -84,32 +84,30 @@ Neste projeto, a camada **Landing** é usada para armazenar os arquivos de extra
 
 ---
 
-## 🗂️ Estrutura de Pastas
+## 🗂️ Estrutura do Projeto
 
 ```text
-.
+├── docs/
+│   ├── index.md
+│   ├── arquitetura.md
+│   ├── bronze.md
+│   ├── silver.md
+│   ├── gold.md
+│   ├── execucao-pipeline.md
+│   ├── databricks.md
+│   ├── delta-lake.md
+│   └── stylesheets/
+│       └── extra.css
+└── notebooks/
+    ├── 000_-_Atividade_Pratica_-_Lakehouse_-_Preparando_ambiente-69fa4f0f2d7b1.ipynb
+    ├── 001 - Atividade Pratica - Lakehouse - Extracao.ipynb
+    ├── 002_-_Atividade_Pratica_-_Lakehouse_-_Bronze-69fa4f0f35b55.ipynb
+    ├── 003_-_Atividade_Pratica_-_Lakehouse_-_Silver-69fa4f0f39c3c.ipynb
+    ├── 004_-_Atividade_Pratica_-_Lakehouse_-_Gold-69fa4f0f6afff.ipynb
+    └── 005_-_Atifidade_Pratica_-_Lakehouse_-_Destruindo_ambiente-69fa4f0f1bc85.ipynb
+├── mkdocs.yml
 ├── README.md
-└── notebooks
-	 ├── 000_-_Atividade_Pratica_-_Lakehouse_-_Preparando_ambiente-69fa4f0f2d7b1.ipynb
-	 ├── 001 - Atividade Pratica - Lakehouse - Extracao.ipynb
-	 ├── 002_-_Atividade_Pratica_-_Lakehouse_-_Bronze-69fa4f0f35b55.ipynb
-	 ├── 003_-_Atividade_Pratica_-_Lakehouse_-_Silver-69fa4f0f39c3c.ipynb
-	 ├── 004_-_Atividade_Pratica_-_Lakehouse_-_Gold-69fa4f0f6afff.ipynb
-	 └── 005_-_Atifidade_Pratica_-_Lakehouse_-_Destruindo_ambiente-69fa4f0f1bc85.ipynb
 ```
-
----
-
-## ✅ Tecnologias Utilizadas
-
-- Databricks
-- PySpark
-- Spark SQL
-- Pandas
-- MongoDB Atlas
-- Delta Lake
-
----
 
 ## 📌 Observacoes Importantes
 
@@ -168,10 +166,9 @@ source .venv/bin/activate
 # Windows (PowerShell)
 python -m venv .venv
 .\.venv\Scripts\Activate
+```
 
-
-### Instalar dependências
-
+Instale as dependências:
 ```bash
 pip install mkdocs-material mkdocs-mermaid2-plugin pymdown-extensions
 ```
@@ -196,20 +193,4 @@ Para publicar a documentação:
 
 ```bash
 mkdocs gh-deploy
-```
-
----
-
-## 📂 Estrutura da Documentação
-
-```bash
-docs/
-├── index.md
-├── arquitetura.md
-├── bronze.md
-├── silver.md
-├── gold.md
-├── pipeline.md
-├── databricks.md
-└── delta-lake.md
 ```
