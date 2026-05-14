@@ -1,4 +1,4 @@
-# 🚀 Lakehouse Medallion para Seguradora (Databricks)
+# 🚀 Lakehouse Medallion (Databricks)
 
 Projeto completo de **Data Lakehouse** para aula de engenharia de dados, construído no **Databricks** com a **Arquitetura Medallion**. O fluxo cobre desde a extração de dados no MongoDB Atlas até a modelagem dimensional no Gold, garantindo governança, qualidade e performance em cada camada.
 
