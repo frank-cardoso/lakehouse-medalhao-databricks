@@ -24,7 +24,6 @@ plugins:
   - mermaid2
 
 markdown_extensions:
-  - pymdownx.superfences
   - admonition
   - attr_list
 
@@ -35,6 +34,7 @@ nav:
       - Camada Bronze: bronze.md
       - Camada Silver: silver.md
       - Camada Gold: gold.md
+      - Execução do Pipeline: execucao-pipeline.md
   - Tecnologias:
       - Databricks: databricks.md
       - Delta Lake: delta-lake.md

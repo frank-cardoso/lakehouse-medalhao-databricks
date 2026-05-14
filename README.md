@@ -134,7 +134,7 @@ Este projeto possui uma documentação profissional desenvolvida com **MkDocs Ma
 
 ## 📖 Acesse a Documentação
 
-👉 https://SEU-USUARIO.github.io/lakehouse-medalhao-databricks/
+👉 https://github.com/frank-cardoso/lakehouse-medalhao-databricks
 
 ---
 
@@ -153,6 +153,22 @@ A documentação inclui:
 ---
 
 ## ▶️ Executar Localmente
+
+### Pré-requisitos
+Certifique-se de ter o [Python](https://www.python.org/downloads/) e o gerenciador de pacotes `pip` instalados em sua máquina. Recomenda-se o uso de um ambiente virtual (venv).
+
+### Instalar dependências
+
+Crie e ative um ambiente virtual (opcional, mas recomendado):
+```bash
+# Linux/macOS
+python3 -m venv .venv
+source .venv/bin/activate
+
+# Windows (PowerShell)
+python -m venv .venv
+.\.venv\Scripts\Activate
+
 
 ### Instalar dependências
 

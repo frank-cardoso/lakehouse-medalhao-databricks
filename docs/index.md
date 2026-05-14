@@ -1,72 +1,64 @@
-# 🚀 Lakehouse Medalhão com Databricks
+# 🚀 Lakehouse Medalhão (Databricks)
 
-## 📖 Sobre o Projeto
+## 📌 Problema e objetivo de negócio
 
-Este projeto implementa uma arquitetura **Lakehouse Medalhão** utilizando:
+A seguradora precisa unificar dados de **clientes, carros, apólices, sinistros e endereços** para acelerar análises, melhorar a qualidade dos relatórios e reduzir retrabalho entre times. Este projeto entrega um **Lakehouse completo** com Arquitetura Medallion na plataforma Databricks, garantindo rastreabilidade, governança e performance ao longo do ciclo de vida dos dados.
 
-- Apache Spark
-- Delta Lake
-- Databricks
-- PySpark
+Objetivos principais:
 
-O pipeline segue o padrão moderno de engenharia de dados dividido em:
-
-- 🥉 Bronze Layer
-- 🥈 Silver Layer
-- 🥇 Gold Layer
+- Unificar dados operacionais em uma visão confiável
+- Garantir qualidade com camadas de tratamento
+- Acelerar o consumo por BI e analytics
+- Padronizar processos com orquestração automatizada
 
 ---
 
-## 🏗 Arquitetura Geral
+## 🧭 Fluxo ponta a ponta
+
+1. **Extração (MongoDB Atlas)** com proteção de credenciais via `dbutils.widgets`
+2. **Landing Zone (CSV)** em `/Volumes/workspace/landing/dados`
+3. **Bronze (Delta)** com metadados técnicos
+4. **Silver (Delta)** com limpeza, tipagem e padronização
+5. **Gold (Delta)** com modelo dimensional e SCD Tipo 1
+
+---
+
+## 🏗 Arquitetura geral
 
 ```mermaid
-flowchart TB
-    A[Landing Zone] -->|Ingestão|   B[Bronze Layer]
-    B[Bronze Layer] -->|Tratamento| C[Silver Layer]
-    C[Silver Layer] -->|Agregação|  D[Gold Layer]
+%%{init: {"theme": "dark", "themeVariables": {"edgeLabelBackground": "transparent"}}}%%
+flowchart TD
+    classDef landing fill:#37474f,stroke:#fff,stroke-width:1px,color:#fff
+    classDef bronze fill:#cd7f32,stroke:#fff,stroke-width:1px,color:#fff
+    classDef silver fill:#757575,stroke:#fff,stroke-width:1px,color:#fff
+    classDef gold fill:#b7791f,stroke:#fff,stroke-width:1px,color:#fff
+    classDef step fill:#2d3748,stroke:#4a5568,color:#fff
+
+    S[MongoDB Atlas]:::step -->|Extracao via<br>Pandas| L[Landing Zone<br>CSV]:::landing
+    L -->|Ingestao| B[Bronze<br>Delta]:::bronze
+    B -->|Qualidade e<br>padronizacao| C[Silver<br>Delta]:::silver
+    C -->|Modelagem<br>dimensional| D[Gold<br>Delta]:::gold
+    D -->|Consumo| BI[BI / Analytics / ML]:::step
 ```
 
 ---
 
-## 🎯 Objetivos
+## ✅ O que esta documentado
 
-- Criar pipeline escalável
-- Garantir qualidade dos dados
-- Aplicar arquitetura moderna
-- Implementar boas práticas de engenharia de dados
+- **Arquitetura** e fluxo do Lakehouse
+- **Camadas Bronze, Silver e Gold** com regras aplicadas
+- **Orquestracao do pipeline** no Databricks Jobs
+- **Tecnologias** utilizadas e seus beneficios
 
 ---
 
-## ⚙️ Tecnologias Utilizadas
+## ⚙️ Tecnologias utilizadas
 
 | Tecnologia | Finalidade |
 |---|---|
-| Databricks | Processamento distribuído |
-| Apache Spark | ETL |
-| Delta Lake | Armazenamento transacional |
-| Python | Desenvolvimento |
-| MkDocs | Documentação |
-
----
-
-## 📂 Estrutura do Projeto
-
-```bash
-.
-├── docs/
-│   ├── arquitetura.md
-│   ├── bronze.md
-│   ├── databricks.md
-│   ├── delta-lake.md
-│   ├── gold.md
-│   ├── index.md
-│   ├── silver.md
-│   └── stylesheets/
-└── notebooks/
-    ├── 000_-_Atividade_Pratica_-_Lakehouse_-_Preparando_ambiente.ipynb
-    ├── 001_- Atividade Pratica - Lakehouse - Extracao.ipynb
-    ├── 002_-_Atividade_Pratica_-_Lakehouse_-_Bronze.ipynb
-    ├── 003_-_Atividade_Pratica_-_Lakehouse_-_Silver.ipynb
-    ├── 004_-_Atividade_Pratica_-_Lakehouse_-_Gold.ipynb
-    └── 005_-_Atifidade_Pratica_-_Lakehouse_-_Destruindo_ambiente.ipynb
-```
+| Databricks | Processamento distribuido e orquestracao |
+| Apache Spark | ETL escalavel |
+| Delta Lake | Armazenamento transacional e ACID |
+| MongoDB Atlas | Fonte operacional |
+| Python / PySpark | Transformacoes e modelagem |
+| MkDocs | Documentacao |
