@@ -13,11 +13,10 @@ Camada analítica final para consumo.
 ## Fluxo Analítico
 
 ```mermaid
-flowchart LR
-
-A[Silver] --> B[Agregações]
-B --> C[KPIs]
-C --> D[Dashboards]
+flowchart TB
+    A[Silver]     -->|Agregação de métricas|  B[Agregações]
+    B[Agregações] -->|Cálculo de indicadores| C[KPIs]
+    C[KPIs]       -->|Visualização|           D[Dashboards]
 ```
 
 ---

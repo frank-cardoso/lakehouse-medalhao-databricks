@@ -20,12 +20,10 @@ O pipeline segue o padrão moderno de engenharia de dados dividido em:
 ## 🏗 Arquitetura Geral
 
 ```mermaid
-flowchart LR
-
-A[Raw Data] --> B[Bronze Layer]
-B --> C[Silver Layer]
-C --> D[Gold Layer]
-D --> E[Analytics / BI]
+flowchart TB
+    A[Landing Zone] -->|Ingestão|   B[Bronze Layer]
+    B[Bronze Layer] -->|Tratamento| C[Silver Layer]
+    C[Silver Layer] -->|Agregação|  D[Gold Layer]
 ```
 
 ---
@@ -55,25 +53,20 @@ D --> E[Analytics / BI]
 
 ```bash
 .
-├── bronze/
-├── silver/
-├── gold/
-├── notebooks/
 ├── docs/
-└── mkdocs.yml
-```
-
----
-
-## 📊 Pipeline de Dados
-
-```mermaid
-flowchart TD
-
-A[Ingestão de Dados] --> B[Bronze]
-B --> C[Tratamento]
-C --> D[Silver]
-D --> E[Agregações]
-E --> F[Gold]
-F --> G[Dashboard / BI]
+│   ├── arquitetura.md
+│   ├── bronze.md
+│   ├── databricks.md
+│   ├── delta-lake.md
+│   ├── gold.md
+│   ├── index.md
+│   ├── silver.md
+│   └── stylesheets/
+└── notebooks/
+    ├── 000_-_Atividade_Pratica_-_Lakehouse_-_Preparando_ambiente.ipynb
+    ├── 001_- Atividade Pratica - Lakehouse - Extracao.ipynb
+    ├── 002_-_Atividade_Pratica_-_Lakehouse_-_Bronze.ipynb
+    ├── 003_-_Atividade_Pratica_-_Lakehouse_-_Silver.ipynb
+    ├── 004_-_Atividade_Pratica_-_Lakehouse_-_Gold.ipynb
+    └── 005_-_Atifidade_Pratica_-_Lakehouse_-_Destruindo_ambiente.ipynb
 ```

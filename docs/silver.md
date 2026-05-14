@@ -14,11 +14,9 @@ A camada Silver realiza limpeza e padronização.
 ## Pipeline
 
 ```mermaid
-flowchart TD
-
-A[Bronze] --> B[Validação]
-B --> C[Transformação]
-C --> D[Silver]
+    A[Bronze]        -->|Validação|     B[Validação]
+    B[Validação]     -->|Transformação| C[Transformação]
+    C[Transformação] -->|Cálculo|       D[Silver]
 ```
 
 ---

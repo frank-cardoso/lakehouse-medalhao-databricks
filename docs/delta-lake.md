@@ -16,11 +16,10 @@ O Delta Lake adiciona confiabilidade e transações ACID ao Data Lake.
 ## Fluxo
 
 ```mermaid
-flowchart LR
-
-A[Data Lake] --> B[Delta Lake]
-B --> C[ACID]
-B --> D[Time Travel]
+flowchart TB
+    A[Data Lake]  -->|Camada de armazenamento|   B[Delta Lake]
+    B[Delta Lake] -->|Garantia de consistência|  C[ACID]
+    B[Delta Lake] -->|Histórico e versionamento| D[Time Travel]
 ```
 
 ---

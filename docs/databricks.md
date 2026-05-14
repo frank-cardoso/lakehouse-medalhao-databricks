@@ -25,9 +25,7 @@ O Databricks foi utilizado como plataforma principal de processamento.
 ## Arquitetura
 
 ```mermaid
-flowchart TD
-
-A[Usuário] --> B[Notebook]
-B --> C[Spark Cluster]
-C --> D[Delta Lake]
+    A[Usuário]       -->|Interação|     B[Notebook]
+    B[Notebook]      -->|Execução|      C[Spark Cluster]
+    C[Spark Cluster] -->|Armazenamento| D[Delta Lake]
 ```

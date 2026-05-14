@@ -12,11 +12,10 @@ A arquitetura Medalhão organiza os dados em múltiplas camadas para melhorar:
 ## Fluxo da Arquitetura
 
 ```mermaid
-flowchart LR
-
-A[Dados Brutos] --> B[Bronze]
-B --> C[Silver]
-C --> D[Gold]
+    A[Landing Zone] 
+    A --> B[Bronze Layer]
+    B --> C[Silver Layer]
+    C --> D[Gold Layer]
 ```
 
 ---

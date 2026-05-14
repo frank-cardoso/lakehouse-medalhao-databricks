@@ -13,10 +13,8 @@ A camada Bronze é responsável pela ingestão dos dados brutos.
 ## Fluxo
 
 ```mermaid
-flowchart TD
-
-A[Fonte de Dados] --> B[Landing Zone]
-B --> C[Bronze Delta Table]
+    A[Fonte de Dados] --> B[Landing Zone]
+    B[Landing Zone]   --> C[Bronze Delta Table]
 ```
 
 ---
