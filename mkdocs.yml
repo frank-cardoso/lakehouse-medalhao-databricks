@@ -1,0 +1,40 @@
+site_name: Lakehouse Medalhão Databricks
+theme:
+  name: material
+  language: pt-BR
+  palette:
+    - scheme: slate
+      primary: deep purple
+      accent: cyan
+      toggle:
+        icon: material/weather-night
+        name: Modo Escuro
+    - scheme: default
+      primary: deep purple
+      accent: cyan
+      toggle:
+        icon: material/weather-sunny
+        name: Modo Claro
+  features:
+    - navigation.tabs
+    - content.code.copy
+
+plugins:
+  - search
+  - mermaid2
+
+markdown_extensions:
+  - admonition
+  - attr_list
+
+nav:
+  - Home: index.md
+  - Arquitetura:
+      - Visão Geral: arquitetura.md
+      - Camada Bronze: bronze.md
+      - Camada Silver: silver.md
+      - Camada Gold: gold.md
+      - Execução do Pipeline: execucao-pipeline.md
+  - Tecnologias:
+      - Databricks: databricks.md
+      - Delta Lake: delta-lake.md

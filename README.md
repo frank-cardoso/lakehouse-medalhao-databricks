@@ -116,3 +116,100 @@ Neste projeto, a camada **Landing** é usada para armazenar os arquivos de extra
 - O uso de `dbutils.widgets` evita credenciais hardcoded no codigo.
 - A camada Gold esta preparada para atualizacoes com SCD Tipo 1.
 - Todos os dados persistem em **Delta Lake** para confiabilidade e performance.
+
+---
+
+# 📚 Documentação Interativa com MkDocs
+
+Este projeto possui uma documentação profissional desenvolvida com **MkDocs Material**, oferecendo uma navegação moderna, organizada e responsiva para explorar toda a arquitetura do pipeline Lakehouse.
+
+## 🚀 Tecnologias da Documentação
+
+- MkDocs
+- Material for MkDocs
+- Mermaid Diagrams
+- GitHub Pages
+
+---
+
+## 📖 Acesse a Documentação
+
+👉 https://github.com/frank-cardoso/lakehouse-medalhao-databricks
+
+---
+
+## 🏗 Conteúdo da Documentação
+
+A documentação inclui:
+
+- Visão geral da arquitetura Medalhão
+- Explicação das camadas Bronze, Silver e Gold
+- Pipeline ETL completo
+- Diagramas Mermaid
+- Tecnologias utilizadas
+- Fluxo de processamento dos dados
+- Estrutura do projeto
+
+---
+
+## ▶️ Executar Localmente
+
+### Pré-requisitos
+Certifique-se de ter o [Python](https://www.python.org/downloads/) e o gerenciador de pacotes `pip` instalados em sua máquina. Recomenda-se o uso de um ambiente virtual (venv).
+
+### Instalar dependências
+
+Crie e ative um ambiente virtual (opcional, mas recomendado):
+```bash
+# Linux/macOS
+python3 -m venv .venv
+source .venv/bin/activate
+
+# Windows (PowerShell)
+python -m venv .venv
+.\.venv\Scripts\Activate
+
+
+### Instalar dependências
+
+```bash
+pip install mkdocs-material mkdocs-mermaid2-plugin pymdown-extensions
+```
+
+### Iniciar servidor local
+
+```bash
+mkdocs serve
+```
+
+Acesse:
+
+```txt
+http://127.0.0.1:8000
+```
+
+---
+
+## 🌐 Deploy GitHub Pages
+
+Para publicar a documentação:
+
+```bash
+mkdocs gh-deploy
+```
+
+---
+
+## 📂 Estrutura da Documentação
+
+```bash
+docs/
+├── index.md
+├── arquitetura.md
+├── bronze.md
+├── silver.md
+├── gold.md
+├── pipeline.md
+├── databricks.md
+└── delta-lake.md
+```
